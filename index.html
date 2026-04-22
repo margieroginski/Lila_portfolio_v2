@@ -341,17 +341,9 @@
   }
   .card-link:hover { gap: 10px; }
 
-  /* ── NEWSLETTERS ── */
-  #newsletters { background: var(--cream); }
+  /* ── WORK SECTIONS (Newsletters, LinkedIn, Events) ── */
+  #newsletters, #linkedin, #events { background: var(--cream); border-top: 3px solid var(--yellow); }
 
-  /* ── LINKEDIN ── */
-  #linkedin { background: var(--cream2); }
-
-  /* ── EVENTS ── */
-  #events { background: var(--dark); }
-  #events .section-label { color: var(--yellow); }
-  #events .section-title { color: var(--cream); }
-  #events .content-intro { color: rgba(244,240,226,0.65); }
   .events-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; }
 
   .event-featured {
@@ -395,22 +387,6 @@
   }
   .event-feat-lbl { font-size: 11px; color: rgba(26,24,20,0.55); text-transform: uppercase; letter-spacing: 0.08em; }
 
-  .event-card {
-    background: rgba(255,255,255,0.07);
-    border: 1px solid rgba(244,240,226,0.1);
-    border-radius: 20px;
-    padding: 28px;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    transition: background 0.2s;
-  }
-  .event-card:hover { background: rgba(255,255,255,0.11); }
-  .event-card .card-type { color: rgba(244,240,226,0.45); }
-  .event-card .card-title { color: var(--cream); }
-  .event-card .stat-chip-val { color: var(--yellow); }
-  .event-card .stat-chip-label { color: rgba(244,240,226,0.45); }
-  .event-card .card-link { color: var(--cream); border-bottom-color: var(--yellow); }
 
   /* ── EXPERIENCE ── */
   #experience { background: var(--cream); }
@@ -739,7 +715,7 @@ function App() {
       <section id="events">
         <div className="container">
           <p className="section-label">Events</p>
-          <h2 className="section-title" style={{color:'var(--cream)'}}>Bringing people together</h2>
+          <h2 className="section-title">Bringing people together</h2>
           <p className="content-intro">I manage the Sustainability Creatives event calendar on Luma, growing from launch to 1,500 subscribers with 183 events averaging ~25 attendees each.</p>
           <div className="events-grid">
             <a href="https://luma.com/sustainabilitycreatives?k=c" target="_blank" rel="noopener" className="event-featured" style={{textDecoration:'none'}}>
@@ -761,7 +737,7 @@ function App() {
               {title:"Portfolio Tips & Tricks: Job Switcher Edition", guests:"62", url:"https://luma.com/qwzglyde"},
               {title:"Re-design Jam: Bright Ideas for a Sustainable Future", guests:"67", url:"https://luma.com/466bqkng"}
             ].map((ev,i) => (
-              <div key={i} className="event-card">
+              <div key={i} className="card">
                 <span className="card-type">Event</span>
                 <p className="card-title">{ev.title}</p>
                 <div className="card-stats"><StatChip val={ev.guests} label="Guests" /></div>
